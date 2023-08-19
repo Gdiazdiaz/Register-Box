@@ -9,7 +9,6 @@ class Cart
 
   def add_product(product_name, quantity)
     @selected_products[product_name] = quantity
-    calculate_products_total
   end
 
   def add_optional(optional_name, quantity)
