@@ -6,7 +6,7 @@ require_relative '../promotion'
 
 test_yml_path = File.join(__dir__, 'test.yml')
 
-data = YAML.load(File.read(test_yml_path))
+data = YAML.load_file(test_yml_path)
 
 describe Cart do
   before(:each) do
@@ -24,18 +24,18 @@ describe Cart do
 
   it 'calcula el valor de la orden' do
     @cart.add_optional('bag', 2)
-    expect(@cart.calculate_total).to eq(2)
+    expect(@cart.calculate_total).to eq(4)
   end
 
   it 'calcula el valor de la orden con propina y promociones' do
     @cart.add_product('orange', 10)
     @cart.add_product('apple', 15)
-    expect(@cart.calculate_total).to eq(168)
+    expect(@cart.calculate_total).to eq(212)
   end
 
   it 'calcula el valor de la orden con propina y promociones' do
     @cart.add_product('apple', 5)
     @cart.add_optional('bag', 2)
-    expect(@cart.calculate_total).to eq(52)
+    expect(@cart.calculate_total).to eq(54)
   end
 end

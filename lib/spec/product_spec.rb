@@ -3,17 +3,17 @@ require_relative '../product'
 describe Product do
   before(:each) do
     @product = Product.new('apple', {
-      'price_model' => 'fixed',
-      'price' => 10
-    })
+                             'price_model' => 'fixed',
+                             'price' => 10
+                           })
     @product_b = Product.new('apple', {
-      'price_model' => 'tiered',
-      'tiers' => [
-        { 'from' => 1, 'to' => 10, 'price' => 5 },
-        { 'from' => 11, 'to' => 20, 'price' => 1 },
-        { 'from' => 21, 'to' => 30, 'price' => 2 }
-      ]
-    })
+                               'price_model' => 'tiered',
+                               'tiers' => [
+                                 { 'from' => 1, 'to' => 10, 'price' => 5 },
+                                 { 'from' => 11, 'to' => 20, 'price' => 1 },
+                                 { 'from' => 21, 'to' => 30, 'price' => 2 }
+                               ]
+                             })
   end
 
   it 'it is an instance of Product class' do

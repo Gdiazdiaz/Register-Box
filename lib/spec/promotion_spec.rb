@@ -3,13 +3,13 @@ require_relative '../promotion'
 describe Promotion do
   before(:each) do
     @promotion = Promotion.new('one', {
-      'discount' => 0.5,
-      'requirements' => { 'min_units' => 5 }
-    })
+                                 'discount' => 0.5,
+                                 'requirements' => { 'min_units' => 5 }
+                               })
     @promotion_b = Promotion.new('two', {
-      'discount' => 0.6,
-      'requirements' => { 'min_amount' => 50 }
-    })
+                                   'discount' => 0.6,
+                                   'requirements' => { 'min_amount' => 50 }
+                                 })
   end
 
   it 'it is an instance of promotion class' do
